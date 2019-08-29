@@ -1,0 +1,35 @@
+  <hr>
+  <ul class="nav justify-content-center">
+    <li *ngFor="let hero of herolist" class="nav-item">
+      <a class="nav-link" href="#">{{ hero.title }}</a>
+    </li>
+  </ul>
+  <hr>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Sl #</th>
+        <th>Title</th>
+        <th>Poster</th>
+        <th>Full Name</th>
+        <th>City</th>
+        <th>Release Date</th>
+        <th>Ticket Price</th>
+        <th>Movies List</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hero of herolist">
+          <td>{{ hero.sl }}</td>
+          <td>{{ hero.title }}</td>
+          <td>
+            <img width="120" [src]="hero.poster" [alt]="hero.title">
+          </td>
+          <td>{{ hero.firstname+' '+hero.lastname }}</td>
+          <td>{{ hero.city }}</td>
+          <td>{{ hero.releasedate }}</td>
+          <td>{{ hero.ticketprice }}</td>
+          <td>{{ hero.movieslist.length }}</td>
+        </tr>
+      </tbody>
+  </table>
